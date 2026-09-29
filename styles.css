@@ -1,0 +1,389 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Vazir;
+    background: darkslateblue;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(../Fonts/Vazir.ttf);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+/*****Header*****/
+
+.burger-menu {
+    display: none;
+}
+
+
+header .header-productr input {
+    display: none;
+}
+
+header {
+    z-index: 100;
+    top: 0;
+    right: 2.5%;
+    width: 95%;
+    position: fixed;
+    background: white;
+    display: flex;
+    margin: 12px;
+    border-radius: 46px;
+    padding: 2px 19px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+
+
+.phone,
+.telepohone-number-phone {
+    background: rgb(122, 2, 234);
+    color: white;
+    border-radius: 12px;
+    margin-left: 10px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.telepohone-number-phone {
+    display: none;
+}
+
+/****Header menu*****/
+
+.header-menu {
+    top: 54px;
+    padding: 6px;
+    transform: translateY(-5px);
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    background: rgb(111, 77, 185);
+    color: white;
+    width: 180px;
+    border-radius: 12px ;
+}
+
+.header-menu-text {
+    color: white;
+    margin-bottom: 6px;
+    display: block;
+    transition: all 0.3s;
+    padding-right: 6px;
+    border-radius: 6px;
+}
+
+.header-menu-text:hover {
+    background: white;
+    color:  black;
+}
+
+.header-menu a[href="##"] {
+    margin-bottom: 0;
+}
+
+.input:checked ~ .header-menu{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(5px);
+}   
+
+
+/****befor & after*****/
+
+.navbar-item {
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 4px;
+    overflow: hidden;
+}
+
+
+.navbar-item::before {
+    content: "";
+    position: absolute;
+    transition: all 0.4s;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    right: -100%;
+    background: #000;
+    opacity: 0;
+}
+
+.navbar-item:hover::before {
+    opacity: 1;
+    right: 0;
+}
+
+/****logo*****/
+
+.logo {
+    width: 50px;
+    margin-top: 5px;
+}
+
+/****main******/
+
+.menu-list {
+    padding-top: 35px;
+    display: flex;
+    flex-wrap: wrap; /**مهم**/
+    gap: 20px;
+    justify-content: space-around;
+    margin: 80px 40px;
+}
+
+.menu-list .menu-item {
+    background: #ffffff2c;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    width: 29%;
+    transition: all 0.3s;
+
+}
+.menu-list .menu-img{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    object-fit: contain;
+    
+}
+
+/*****menu info*****/
+.menu-list .menu-info {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.menu-list .menu-title {
+    border-top: solid white 1px;
+    color: white;
+    padding-top: 4px;
+}
+
+.menu-list .menu-info .menu-btn {
+    background: white;
+    color: #000;
+    border-radius: 10px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+/******footer******/
+
+footer {
+    background: white;
+    padding: 20px;
+}
+
+footer .footer-div {
+    display: flex;
+    margin-top: 20px;
+}
+
+.coffee-info {
+    width: 43%;
+}
+
+footer .navbar {
+    display: block;
+    margin-right: 100px;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin: 30px 0px;
+    background: white;
+    display: block;
+}
+
+.logo-up {
+    position: fixed;
+    bottom: 10px;
+    background: darkslateblue;
+    z-index: 100;
+    color: white;
+    padding: 15px 16px 15px 25px;
+    border-radius: 10px;
+}
+
+/* ۱. کارت محصول */
+.product-card { /* یا هر کلاسی که کارت‌های قهوه را می‌سازد */
+    position: relative ; /* !important موقتی برای تست */
+    overflow: hidden; 
+}
+
+/* ۲. آیکون قلب */
+.like-logo {
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    color: white;
+    background: #ffffff57;
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.like-logo:hover {
+    top: 12;
+    right: 12;
+    transform: scale(1.1);
+}
+
+.menu-item:hover .like-logo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+}
+
+
+
+@media screen and  (max-width: 728px){
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: row-reverse;
+        margin: 10px auto;
+        justify-content: space-between;
+        width: 95%;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .telepohone-number-phone {
+        display: block;
+        text-align: center;
+    }
+
+    header .navbar {
+        transition: all 0.45s;
+        flex-direction: column-reverse;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.625);
+        width: 100%;
+        height: 100%;
+        color: white;
+        top: 0;
+        right: -100%;
+        top: -100%;
+    }
+
+
+    .burger-menu {
+        display: block;
+        position: relative;
+        z-index: 100;
+        font-size: 1.5rem;
+        margin-right: -82%;
+        color: darkslateblue;
+    }
+
+    .like-logo {
+        display: none;
+    }
+
+    header nav .navbar li {
+        color: white;
+    }
+
+    #checkbox-menu:checked ~ nav .navbar {
+        top: 0;
+        right: 0;
+    }
+
+    .menu-list .menu-item {
+        width: 100%;
+    }
+
+    .menu-item:hover {
+        transform: translateY(0);
+    }
+    
+    .menu-item {
+        transform: translateY(0);
+    }
+
+    footer .navbar {
+        display: none;
+    }
+
+    .coffee-info {
+        width: 90%;
+    }
+
+    /****Header menu*****/
+
+    .header-menu {
+        top: 64%;
+        position: absolute;
+    }
+
+
+}
+
+@media screen and (min-width: 528px) and ((max-width: 1000px)){
+    .menu-list .menu-item {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 1000px){
+    .menu-list .menu-item {
+        width: 48%;
+    }
+}
